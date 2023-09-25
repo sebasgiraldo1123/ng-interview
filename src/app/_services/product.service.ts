@@ -57,22 +57,19 @@ export class ProductService {
       )
   }
 
-
-  /*
-
-  update(id: number, post: Post): Observable<any> {
-    return this.http.put(this.apiURL + '/photos/' + id, JSON.stringify(post), this.httpOptions)
+  /**
+   * Actualliza un producto dado su id
+   */
+  update(id: number, product: Product): Observable<any> {
+    return this.http.patch(this.apiURL + '/products/' + id, JSON.stringify(product), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
   }
 
-*/
-
   /**
    * Registra un producto dado su objeto y encabezado
    */
-
   create(product: Product): Observable<any> {
     console.log(product);
     return this.http.post(this.apiURL + '/products/', JSON.stringify(product), this.httpOptions)
