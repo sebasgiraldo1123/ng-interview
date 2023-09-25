@@ -8,7 +8,7 @@ import { Product } from '../_interfaces/product';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })
-export class ViewComponent implements OnInit{
+export class ViewComponent implements OnInit {
   id!: number; // Pertenece a un tipo específico e inicialmente no tiene un valor asignado
   product!: Product;
 

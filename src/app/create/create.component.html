@@ -1,1 +1,46 @@
-<p>create works!</p>
+<div class="container">
+  <h3>Crear Nuevo Producto</h3>
+
+  <a href="#" routerLink="/index" class="btn btn-primary btn-sm">
+    <span class="material-symbols-outlined">
+      reply
+    </span>
+  </a>
+
+  <form [formGroup]="createForm" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input formControlName="name" id="name" type="text" class="form-control">
+      <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">El nombre es requerido.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Descripción</label>
+      <input formControlName="description" id="description" type="text" class="form-control">
+      <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+        <div *ngIf="f['description'].errors && f['description'].errors['required']">La descripción es requerida.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Valor</label>
+      <input formControlName="valor" id="valor" type="number" class="form-control">
+      <div *ngIf="f['valor'].touched && f['valor'].invalid" class="alert alert-danger">
+        <div *ngIf="f['valor'].errors && f['valor'].errors['required']">El valor es requerido.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="imageURL">URL imagen</label>
+      <input formControlName="imageURL" id="imageURL" type="text" class="form-control">
+      <div *ngIf="f['imageURL'].touched && f['imageURL'].invalid" class="alert alert-danger">
+        <div *ngIf="f['imageURL'].errors && f['imageURL'].errors['required']">La URL de la imagen es requerida.</div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid">Submit</button>
+  </form>
+</div>

@@ -15,16 +15,14 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.productService.getAll().subscribe((data) => {
-      console.log(data);
       this.products = data;
     });
   }
 
   deleteProduct(id: number) {
-    /*
     this.productService.delete(id).subscribe(res => {
       this.products = this.products.filter(item => item.id !== id);
       console.log('Post deleted successfully!');
-    })*/
+    })
   }
 }
