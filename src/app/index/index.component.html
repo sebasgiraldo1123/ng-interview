@@ -1,1 +1,42 @@
-<p>index works!</p>
+<div class="container">
+  <h3>CRUD app</h3>
+  <a href="#" routerLink="/create" class="btn btn-success">Nuevo Producto</a>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width="250px">Opciones</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products">
+
+        <td>
+          <a href="#" [routerLink]="['','view', product.id]" class="btn btn-info btn-sm">
+            <span class="material-symbols-outlined">
+              info
+            </span>
+          </a>
+          <a href="#" [routerLink]="['','edit', product.id]" class="btn btn-primary btn-sm">
+            <span class="material-symbols-outlined">
+              edit
+            </span>
+          </a>
+          <button type="button" (click)="deleteProduct(product.id)" class="btn btn-danger btn-sm">
+            <span class="material-symbols-outlined">
+              delete
+            </span>
+          </button>
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.valor }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

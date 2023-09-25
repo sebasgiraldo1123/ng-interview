@@ -1,1 +1,32 @@
-<p>view works!</p>
+<div class="container">
+  <h3>Vista Detallada</h3>
+
+  <a href="#" routerLink="/index" class="btn btn-primary btn-sm">
+    <span class="material-symbols-outlined">
+      reply
+    </span>
+  </a>
+
+  <p></p>
+
+  <div>
+    <p *ngIf="product"><img [src]="product.imageURL" alt="Imagen" width="600" class="img-fluid"></p>
+    <td></td>
+  </div>
+
+  <div>
+    <strong>Nombre</strong>
+    <p *ngIf="product">{{ product.name }}</p>
+  </div>
+
+  <div>
+    <strong>Descripción</strong>
+    <p *ngIf="product">{{ product.description }}</p>
+  </div>
+
+  <div>
+    <strong>Nombre</strong>
+    <p *ngIf="product">{{ product.valor }}</p>
+  </div>
+
+</div>
